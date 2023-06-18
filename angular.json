@@ -30,8 +30,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/style/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/style"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -93,12 +98,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/style/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/style"
+              ]
+            },
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "83e11d27-d623-4f5e-80d6-a94ee74040ac"
   }
 }

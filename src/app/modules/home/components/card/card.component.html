@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="header-card center-box">
+    <h4>{{ quotation == 'CAD-BRL' ? 'Dólar Canadense' : quotation == 'ARS-BRL' ? 'Peso Argentino' : 'Libra Esterlina' }}</h4>
+  </div>
+  <div class="content" *ngIf="!loading && !error">
+    <div class="content-card center-box">
+      <h2 [ngClass]="{'color-red': numberFormated <= 1.00, 'color-green': numberFormated > 1.00 && numberFormated <= 5.00, 'color-blue': numberFormated > 5.00}">{{ numberFormated | currency }}</h2>
+    </div>
+    <div class="footer-card">
+      <div class="variation center-box">
+        <p class="title-footer">Variação (%)</p>
+        <p class="value-footer">{{ quotations.value.pctChange | number: '1.1-2': 'pt' }}</p>
+      </div>
+      <div class="hour-update center-box">
+        <p class="title-footer">Atualizado</p>
+        <p class="value-footer">{{ quotations.update| date: 'HH:mm:ss' }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="loader center-box" *ngIf="loading">
+    <img src="../../../../../assets/images/loader.svg" alt="Carregando">
+  </div>
+  <div class="error center-box" *ngIf="!loading && error">
+    <p class="title-error">Algo deu errado</p>
+    <button class="button-reload" type="button" (click)="reload(quotation)">Recarregar</button>
+  </div>
+</div>

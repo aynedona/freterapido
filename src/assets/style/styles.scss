@@ -1,0 +1,26 @@
+@import 'variables';
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  background: $app-background;
+}
+
+.center-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-red {
+  color: $text-red;
+}
+.color-green {
+  color: $text-green;
+}
+.color-blue {
+  color: $text-blue;
+}
